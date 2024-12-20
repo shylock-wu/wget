@@ -113,8 +113,8 @@ install_x-ui() {
     #         exit 1
     #     fi
     # fi
-    wget -N --no-check-certificate -O x-ui-${release}-${arch}.tar.gz "https://github.com/parentalclash/x-ui-freebsd/releases/download/${last_version}/x-ui-${release}-${arch}.tar.gz"
-
+    # wget -N --no-check-certificate -O x-ui-${release}-${arch}.tar.gz "https://github.com/parentalclash/x-ui-freebsd/releases/download/fç/x-ui-${release}-${arch}.tar.gz"
+    wget -N --no-check-certificate -O x-ui-${release}-${arch}.tar.gz https://github.com/parentalclash/x-ui-freebsd/releases/download/f0.3.2.1/x-ui-freebsd-amd64.tar.gz
     if [[ -e ./x-ui/ ]]; then
         rm ./x-ui/ -rf
     fi
