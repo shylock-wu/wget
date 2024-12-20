@@ -28,8 +28,8 @@ else
     echo -e "${red}检测架构失败，使用默认架构: ${arch}${plain}"
 fi
 
-echo "架构: ${arch}"
-echo "release: ${release}"
+echo "${red}架构: ${arch}"
+echo "${red}release: ${release}"
 
 #This function will be called when user installed x-ui out of sercurity
 config_after_install() {
