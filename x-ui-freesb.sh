@@ -9,26 +9,27 @@ cd ~
 cur_dir=$(pwd)
 
 uname_output=$(uname -a)
-release="freebsd"
+
 # check os
-# if echo "$uname_output" | grep -Eqi "freebsd"; then
-#     release="freebsd"
-# else
-#     echo -e "${red}未检测到系统版本，请联系脚本作者！${plain}\n" && exit 1
-# fi
+if echo "$uname_output" | grep -Eqi "freebsd"; then
+    release="freebsd"
+else
+    echo -e "${red}未检测到系统版本，请联系脚本作者！${plain}\n" && exit 1
+fi
 
-arch="amd64"
+arch="none"
 
-# if echo "$uname_output" | grep -Eqi 'x86_64|amd64|x64'; then
-#     arch="amd64"
-# elif echo "$uname_output" | grep -Eqi 'aarch64|arm64'; then
-#     arch="arm64"
-# else
-#     arch="amd64"
-#     echo -e "${red}检测架构失败，使用默认架构: ${arch}${plain}"
-# fi
+if echo "$uname_output" | grep -Eqi 'x86_64|amd64|x64'; then
+    arch="amd64"
+elif echo "$uname_output" | grep -Eqi 'aarch64|arm64'; then
+    arch="arm64"
+else
+    arch="amd64"
+    echo -e "${red}检测架构失败，使用默认架构: ${arch}${plain}"
+fi
 
 echo "架构: ${arch}"
+echo "release: ${release}"
 
 #This function will be called when user installed x-ui out of sercurity
 config_after_install() {
